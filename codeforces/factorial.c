@@ -1,16 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 //#include <math.h>
 
 int num_zeros(int x);
 
+
 int main()
 {
-	int x = 1;
-	int d;
-	int twos = 0;
-	int fives = 0;
-	int zeros = 0;
-	int n;
+	int n; // the number on the input line
+	int array_size;
+	int * num_array;
+	scanf("%d", &array_size);
+	num_array = (int *) malloc(array_size * sizeof(int));
+	
 	scanf("%d", &n);
 	
 	while (scanf("%d", &n) != EOF)
@@ -20,6 +22,7 @@ int main()
 	
 	return 0;
 }
+
 
 int num_zeros(int n)
 {
