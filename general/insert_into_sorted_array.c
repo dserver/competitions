@@ -3,7 +3,6 @@ int binary_search(int a[], int num, int length);
 void insert_into_sorted_array(int a[], int num, int length);
 
 
-
 int binary_search(int a[], int num, int length)
 {
 	int low = 0;
@@ -25,3 +24,8 @@ int binary_search(int a[], int num, int length)
 	return -1;
 }
 
+
+void insert_into_sorted_array(int a[], int num, int length)
+{
+	
+}

@@ -1,26 +1,47 @@
+/*
+  Let A the input sorted in ascending order and B be an array of factorials already computed.
+  Let i=0 and A[i] be the factorial we are computing. Let k=0. When we are done computing the
+  factorial of A[i] insert it into B at position k, and incrementing k. B will automatically be in sorted order
+  since it is essentially a copy of A.
+  
+  While computing num_zeros of A[i] a value c=A[i] and c is divided each time a factor of 10, 5, or 2 is found.
+  Check if c is in B. If it is then the factors of 10, 5, and 2 can be added to the factors found so far
+  and the function can return. 
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
-//#include <math.h>
+#include <math.h>
+
+
+
+typedef struct _factorial
+{
+	int number;
+	int tens;
+	int fives;
+	int twos;
+} Factorial;
+
 
 int num_zeros(int x);
+void sort_input(int a[], int length);
 
 
 int main()
 {
-	int n; // the number on the input line
-	int array_size;
-	int * num_array;
-	scanf("%d", &array_size);
-	num_array = (int *) malloc(array_size * sizeof(int));
+	int input_size;
+	scanf("%d", &input_size);
 	
-	scanf("%d", &n);
+	int input[] = (int *) malloc(input_size * sizeof(int));
 	
-	while (scanf("%d", &n) != EOF)
-	{
-		printf("%d\n", num_zeros(n));
+	for (int i = 0; i < input_size; i++){
+		scanf("%d", &input[i]);
 	}
 	
-	return 0;
+	
+	
 }
 
 
@@ -66,4 +87,9 @@ int num_zeros(int n)
 	}
 	
 	return zeros;
+}
+
+void sort_input(int a[], int length)
+{
+	
 }
