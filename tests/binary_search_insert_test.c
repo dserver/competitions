@@ -1,6 +1,9 @@
 #include <stdio.h>
-#include "insert_into_sorted_array.h"
+#include <stdlib.h>
+#include "insert_into_sorted_array.c"
 
+// gcc binary_search_insert_test.c -I../general
+// will compile
 int main()
 {
 	int length = 10;
@@ -13,9 +16,12 @@ int main()
 	
 	// need to loop through and check if each value is there.
 	// finally check for a value that isn't in the array
-	int r = binary_search(a, 1, length);
-	printf("1 was found at position %d\n", r);
+	int r;
+	for (i=0; i < length+1; i++){
+		r = binary_search(a, i+1, length);
+		printf("%d was found at position %d\n", i, r);
+	}
 	
-	r = binary_search(1, 8)
+	
 	return 0;
 }
